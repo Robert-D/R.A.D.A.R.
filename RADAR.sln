@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Basic Express 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RADAR", "RADAR\RADAR.vbproj", "{40BB82F5-4298-4EF6-A688-9B27DEB3023E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40BB82F5-4298-4EF6-A688-9B27DEB3023E}.Debug|x86.ActiveCfg = Debug|x86
+		{40BB82F5-4298-4EF6-A688-9B27DEB3023E}.Debug|x86.Build.0 = Debug|x86
+		{40BB82F5-4298-4EF6-A688-9B27DEB3023E}.Release|x86.ActiveCfg = Release|x86
+		{40BB82F5-4298-4EF6-A688-9B27DEB3023E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

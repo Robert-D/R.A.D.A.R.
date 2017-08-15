@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.pb-radar.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.pb-radar.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.pb-radar.net/">
+      <s:element name="SendStats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StatsDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="IndexID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendStatsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendPBSS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageAsBase64Str" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HeroName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndexID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendPBSSResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendStatsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendStats" />
+  </wsdl:message>
+  <wsdl:message name="SendStatsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendPBSSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendPBSS" />
+  </wsdl:message>
+  <wsdl:message name="SendPBSSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendPBSSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RadarStatsSoap">
+    <wsdl:operation name="SendStats">
+      <wsdl:input message="tns:SendStatsSoapIn" />
+      <wsdl:output message="tns:SendStatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPBSS">
+      <wsdl:input message="tns:SendPBSSSoapIn" />
+      <wsdl:output message="tns:SendPBSSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadarStatsSoap" type="tns:RadarStatsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendStats">
+      <soap:operation soapAction="http://www.pb-radar.net/SendStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPBSS">
+      <soap:operation soapAction="http://www.pb-radar.net/SendPBSS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadarStatsSoap12" type="tns:RadarStatsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendStats">
+      <soap12:operation soapAction="http://www.pb-radar.net/SendStats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPBSS">
+      <soap12:operation soapAction="http://www.pb-radar.net/SendPBSS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadarStats">
+    <wsdl:port name="RadarStatsSoap" binding="tns:RadarStatsSoap">
+      <soap:address location="http://www.pb-radar.net/radar-services/radarstats.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadarStatsSoap12" binding="tns:RadarStatsSoap12">
+      <soap12:address location="http://www.pb-radar.net/radar-services/radarstats.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

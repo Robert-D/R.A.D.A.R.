@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="RADAR.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup>
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0,Profile=Client" />
+    </startup>
+    <userSettings>
+        <RADAR.My.MySettings>
+            <setting name="EmailEnabled" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="SmtpServer" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="SmtpPort" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="SmtpRecipient" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="SmtpUser" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="SmtpPassword" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ColorThresholdStart" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ColorThresholdEnd" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="PbsvssURL" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="PbssScanCount" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="PbssTimeCount" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="AuthReq" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="AuthUser" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="AuthPass" serializeAs="String">
+                <value />
+            </setting>
+        </RADAR.My.MySettings>
+    </userSettings>
+</configuration>

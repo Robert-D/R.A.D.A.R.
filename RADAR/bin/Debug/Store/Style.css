@@ -1,0 +1,53 @@
+﻿body
+{
+    background-color: #191919;
+    font-family: Montserrat Alternates;
+    color: #FFFFFF;
+}
+.bodyTable
+{
+    width: 1024px;
+}
+img
+{
+    border-style: none;
+}
+h1
+{
+    margin-bottom: 5px;
+}
+h3
+{
+    margin-bottom: 5px;
+}
+a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+    color: #49E611;
+}
+a:visited
+{
+}
+#backtotop
+{
+    position: fixed;
+    right: 0px;
+    bottom: 15px;
+}
+#backtotop a
+{
+    text-decoration: none;
+    border: 0 none;
+    display: block;
+    width: 58px;
+    height: 80px;
+}
+#backtotop a:hover
+{
+    opacity: .8; /*mouse over fade effect*/
+}
